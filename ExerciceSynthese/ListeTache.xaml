@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciceSynthese.ListeTache">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#0066CC">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <DatePicker x:Name="dtpDate" Grid.Row="0" Grid.Column="0"/>
+                <ImageButton Source="retour.png" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" x:Name="btnRetour" Clicked="BtnRetour_Clicked"/>
+                <Button x:Name="btnValider" Grid.Row="0" Grid.Column="2" VerticalOptions="End" HeightRequest="50" Text="Valider" TextColor="White" FontSize="20" BackgroundColor="Orange" Clicked="BtnValider_Clicked"/>
+            </Grid>
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Entry  x:Name="Nom" Grid.Row="1"  Placeholder="Nom"></Entry>
+                <Entry x:Name="Prenom" Grid.Row="2"   Placeholder="Prenom" ></Entry>
+                <Entry x:Name="Age" Grid.Row="3"   Placeholder="Age" ></Entry>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

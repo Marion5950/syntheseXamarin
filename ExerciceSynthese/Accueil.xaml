@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciceSynthese.Accueil">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#000" >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <DatePicker x:Name="dtpDate" Grid.Row="0" Grid.Column="0"/>
+                <ImageButton Source="plus.png" Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" x:Name="btnAjouter" Clicked="btnAjouter_Clicked"/>
+                <ImageButton Source="account.png" Grid.Row="0" Grid.Column="3" BackgroundColor="Transparent" x:Name="btnAjouterProfil" Clicked="btnProfil_Clicked"/>
+            </Grid>
+            <ListView x:Name="lstTache">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="8" BackgroundColor="White" Margin="10,15" HasShadow="True">
+                                <Grid Padding="20">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Title}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
+                                    <Switch IsToggled="{Binding Etat}" Grid.Column="1" Toggled="Switch_Toggled" Grid.Row="0"/>
+                                    <Label Text="{Binding Description}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="0" Grid.Row="1"/>
+                                    <Label Text="{Binding Date}" FontSize="20" TextColor="Black" FontAttributes="Bold" Grid.Column="0" Grid.Row="2"/>
+                                </Grid>
+
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

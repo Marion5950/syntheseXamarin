@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciceSynthese.AjouterTache">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#0066CC">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Source="retour.png" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" x:Name="btnRetour" Clicked="BtnRetour_Clicked"/>
+                <Entry  x:Name="Title" Grid.Row="1"  Grid.ColumnSpan="3"  Placeholder="Titre"></Entry>
+                <Entry x:Name="Description" Grid.Row="2" Grid.ColumnSpan="3"  Placeholder="Description" ></Entry>
+                <DatePicker x:Name="Date" Grid.Row="3" ></DatePicker>
+
+            </Grid>
+
+            <Button x:Name="btnValider" VerticalOptions="End" HeightRequest="50" Text="Valider" TextColor="White" FontSize="20" BackgroundColor="#0066CC" Clicked="BtnValider_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
